@@ -1,0 +1,84 @@
+/* Estilos gerais */
+body, .container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Formulário e botão de pesquisa */
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Caixa de seleção */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Mapa */
+.map {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+}
+
+/* Estilos para a seção de Informações da consulta */
+.weather-info {
+    margin-top: 20px;
+}
+
+.weather-info h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    text-decoration: underline;
+}
+
+.weather-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}

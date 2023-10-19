@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Previsão do Tempo</h1>
+        
+        <input type="text" id="cityInput" placeholder="Digite o nome da cidade">
+        <button id="consultButton">Consultar</button>
+        
+        <select id="savedCities">
+            <option value="">Selecione uma cidade</option>
+        </select>
+
+        <div id="map" class="map"></div>
+
+        <div class="weather-info">
+            <h2>Informações da consulta</h2>
+            <p>Nome da cidade: <span id="cityName"></span></p>
+            <p>Data: <span id="currentDate"></span></p>
+            <p>Temperatura atual: <span id="currentTemp"></span></p>
+            <p>Temperatura máxima: <span id="maxTemp"></span></p>
+            <p>Temperatura mínima: <span id="minTemp"></span></p>
+            <p>Tipo do clima: <span id="weatherType"></span></p>
+            <p>Probabilidade de chuva: <span id="rainProbability"></span></p>
+            <p>Fase da Lua: <span id="moonPhase"></span></p>
+        </div>
+    </div>
+</body>
+</html>
