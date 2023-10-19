@@ -72,15 +72,15 @@ select {
     margin-top: 20px;
 }
 
+.weather-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
 .weather-info h2 {
     font-size: 20px;
     margin: 10px 0;
     text-decoration: underline;
-}
-
-.weather-info p {
-    font-size: 16px;
-    margin: 5px 0;
 }
 
 /* Pop-up de erro */
@@ -115,4 +115,27 @@ select {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Estilos para a seção de Previsão dos próximos 3 dias */
+.forecast {
+    margin-top: 20px;
+}
+
+.day-forecast {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.day-forecast p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.day-forecast h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    text-decoration: underline;
 }
