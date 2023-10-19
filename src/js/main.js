@@ -12,6 +12,7 @@ const minElement = document.querySelector("#minTemp");
 const weatherElement = document.querySelector("#weatherType");
 const rainElement = document.querySelector("#rainProbability");
 //const moonElement = document.querySelector("#moonPhase");
+const savedCitiesSelect = document.querySelector("#savedCities");
 
 const map = new ol.Map({
     target: "map",
@@ -25,6 +26,20 @@ const map = new ol.Map({
       zoom: 2,
     }),
   });
+
+// Array para armazenar as cidades já consultadas
+const savedCitiesArray = [];
+
+// Função para adicionar cidade à lista de cidades salvas
+function addCityToSavedList(city) {
+    if (!savedCitiesArray.includes(city)) {
+      savedCitiesArray.push(city);
+      const option = document.createElement("option");
+      option.value = city;
+      option.text = city;
+      savedCitiesSelect.appendChild(option);
+    }
+  }
 
 //Funções
 
@@ -51,6 +66,8 @@ const displayWeather = async (city) => {
     
         map.getView().setCenter(ol.proj.fromLonLat([data.coord.lon, data.coord.lat]));
         map.getView().setZoom(10);
+
+        addCityToSavedList(city);
 
         } else {
     const errorPopup = document.querySelector("#errorPopup");
