@@ -13,6 +13,18 @@ const weatherElement = document.querySelector("#weatherType");
 const rainElement = document.querySelector("#rainProbability");
 //const moonElement = document.querySelector("#moonPhase");
 
+const map = new ol.Map({
+    target: "map",
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.OSM(),
+      }),
+    ],
+    view: new ol.View({
+      center: ol.proj.fromLonLat([0, 0]),
+      zoom: 2,
+    }),
+  });
 
 //Funções
 
