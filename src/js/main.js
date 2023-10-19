@@ -40,16 +40,28 @@ const getWeather = async (city) => {
 const displayWeather = async (city) => {
     const data = await getWeather(city);
 
-    cityElement.innerText = data.name;
-    dataElement.innerText = new Date(data.dt * 1000).toLocaleDateString();
-    currentElement.innerText = `${data.main.temp} °C`;
-    maxElement.innerText = `${data.main.temp_max} °C`;
-    minElement.innerText = `${data.main.temp_min} °C`;
-    weatherElement.innerText = data.weather[0].description;
-    rainElement.innerText = `${data.clouds.all}%`;
+    if (data.name) {
+        cityElement.innerText = data.name;
+        dataElement.innerText = new Date(data.dt * 1000).toLocaleDateString();
+        currentElement.innerText = `${data.main.temp} °C`;
+        maxElement.innerText = `${data.main.temp_max} °C`;
+        minElement.innerText = `${data.main.temp_min} °C`;
+        weatherElement.innerText = data.weather[0].description;
+        rainElement.innerText = `${data.clouds.all}%`;
+    
+        map.getView().setCenter(ol.proj.fromLonLat([data.coord.lon, data.coord.lat]));
+        map.getView().setZoom(10);
 
-    map.getView().setCenter(ol.proj.fromLonLat([data.coord.lon, data.coord.lat]));
-    map.getView().setZoom(10);
+        } else {
+    const errorPopup = document.querySelector("#errorPopup");
+    const popupMessage = document.querySelector("#popupMessage");
+    popupMessage.innerText = "Cidade não encontrada";
+    errorPopup.style.display = "block";
+    const closePopupButton = document.querySelector("#closePopupButton");
+    closePopupButton.addEventListener("click", () => {
+      errorPopup.style.display = "none";
+    });
+  }
 };
 
 
