@@ -83,6 +83,15 @@ const displayWeather = async (city) => {
 
 
 //Eventos
+
+// Evento para selecionar cidades já consultadas
+savedCitiesSelect.addEventListener("change", (e) => {
+    const selectedCity = e.target.value;
+    if (selectedCity && savedCitiesArray.includes(selectedCity)) {
+      displayWeather(selectedCity);
+    }
+  });
+
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const city = cityInput.value;
