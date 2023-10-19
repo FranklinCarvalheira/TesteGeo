@@ -47,6 +47,9 @@ const displayWeather = async (city) => {
     minElement.innerText = `${data.main.temp_min} °C`;
     weatherElement.innerText = data.weather[0].description;
     rainElement.innerText = `${data.clouds.all}%`;
+
+    map.getView().setCenter(ol.proj.fromLonLat([data.coord.lon, data.coord.lat]));
+    map.getView().setZoom(10);
 };
 
 
