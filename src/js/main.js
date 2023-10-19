@@ -11,7 +11,7 @@ const maxElement = document.querySelector("#maxTemp");
 const minElement = document.querySelector("#minTemp");
 const weatherElement = document.querySelector("#weatherType");
 const rainElement = document.querySelector("#rainProbability");
-const moonElement = document.querySelector("#moonPhase");
+//const moonElement = document.querySelector("#moonPhase");
 
 
 //Funções
@@ -21,11 +21,20 @@ const getWeather = async (city) => {
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
     const res = await fetch(apiWeatherURL);
     const data = await res.json();
-    console.log(data);
+    return data;
   }
 
-const displayWeather = (city) => {
-    getWeather(city);
+// Função para exibir dados climáticos
+const displayWeather = async (city) => {
+    const data = await getWeather(city);
+
+    cityElement.innerText = data.name;
+    dataElement.innerText = new Date(data.dt * 1000).toLocaleDateString();
+    currentElement.innerText = `${data.main.temp} °C`;
+    maxElement.innerText = `${data.main.temp_max} °C`;
+    minElement.innerText = `${data.main.temp_min} °C`;
+    weatherElement.innerText = data.weather[0].description;
+    rainElement.innerText = `${data.clouds.all}%`;
 };
 
 
